@@ -13,22 +13,32 @@ use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
 use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
 use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
 use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
-use /Volumes/Zhoon/TSI/tsi.01951.01.01.nc
 
-set win 1
+set win 1 !You're now workign in Window 1
 
-go "/Volumes/Zhoon/Scripts/ilandscape2x1.jnl"
+go "/Volumes/Zhoon/Scripts/isquare2x2.jnl"
 ppl labset, 0.0, 0.0, 0.15, 0.15
 ppl axlsze 0.15 0.15
-let totmp=o_mp+o_mpp+o_mpa
+Let totmp=o_mp+o_mpp+o_mpa
 
 set view v1
-Pl/nolab/nokey a_co2[x=@din,y=@din,z=@din,d=9]
-label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.3 "CO2 Concentration"
-label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.55` 0,90,0.15 "Parts Per Million"
-
+Plot/nolab/nokey/vlim=0:10:1 f_mp[x=@din,y=@din,d=1]
+Pl/ov/nolab/nokey f_mp[x=@din,y=@din,d=2]
+Pl/ov/nolab/nokey f_mp[x=@din,y=@din,d=3]
+Pl/ov/nolab/nokey f_mp[x=@din,y=@din,d=4]
+Pl/ov/nolab/nokey f_mp[x=@din,y=@din,d=5]
+Pl/ov/nolab/nokey f_mp[x=@din,y=@din,d=6]
+Pl/ov/nolab/nokey f_mp[x=@din,y=@din,d=7]
+Pl/ov/nolab/nokey f_mp[x=@din,y=@din,d=8]
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.3 "Pollution Flux"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.55` 0,90,0.15 "Plastic particles (m^-^2 s^-^1)"
 
 set view v2
+Plot/nolab/nokey f_mp[x=@din,y=@din,d=1]
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.3 "BAU Pollution Flux"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.55` 0,90,0.15 "Plastic particles (m^-^2 s^-^1)"
+
+set view v3
 Pl/nolab/nokey/vlim=0:1.8E10:2E9 totmp[x=@din,y=@din,z=@din,d=1]
 Pl/ov/nolab/nokey totmp[x=@din,y=@din,z=@din,d=2]
 Pl/ov/nolab/nokey totmp[x=@din,y=@din,z=@din,d=3]
@@ -37,9 +47,9 @@ Pl/ov/nolab/nokey totmp[x=@din,y=@din,z=@din,d=5]
 Pl/ov/nolab/nokey totmp[x=@din,y=@din,z=@din,d=6]
 Pl/ov/nolab/nokey totmp[x=@din,y=@din,z=@din,d=7]
 Pl/ov/nolab/nokey totmp[x=@din,y=@din,z=@din,d=8]
-label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.3 "Microplastic Particles"
-label/nouser `($ppl$xlen)*-.31` `($ppl$ylen)*.55` 0,90,0.15 "Particles y-1"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.3 "Pollution Inventory"
+label/nouser `($ppl$xlen)*-.3` `($ppl$ylen)*.55` 0,90,0.15 "Plastic particles"
 
+set view v4
 
-
-FRAME/FILE=M_7.png
+FRAME/FILE=PF_PI_38.png
