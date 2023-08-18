@@ -1,0 +1,81 @@
+set mem/size=400
+canc mode cal
+
+def symbol opt1 = lev=(-inf)(0,10,0.1)(inf)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+set win 1
+
+go "/Volumes/Zhoon/Scripts/isquare3x3_for_hammer_forRet.jnl"
+ppl labset, 0.0, 0.0, 0.15, 0.15
+ppl axlsze 0.15 0.15
+set window/size = 25
+
+set view v1
+Plot/nolab/nokey/vlim=0:1.2E8:1.2E7 o_mp[x=@din,y=@din,k=1,d=1]
+Pl/ov/nolab/nokey o_mp[x=@din,y=@din,k=1,d=2]
+Pl/ov/nolab/nokey o_mp[x=@din,y=@din,k=1,d=3]
+Pl/ov/nolab/nokey o_mp[x=@din,y=@din,k=1,d=4]
+Pl/ov/nolab/nokey o_mp[x=@din,y=@din,k=1,d=5]
+Pl/ov/nolab/nokey o_mp[x=@din,y=@din,k=1,d=6]
+Pl/ov/nolab/nokey o_mp[x=@din,y=@din,k=1,d=7]
+Pl/ov/nolab/nokey o_mp[x=@din,y=@din,k=1,d=8]
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Unattached"
+
+set view v2
+Plot/nolab/nokey/vlim=0:1.2E7:1.2E6 o_mpp[x=@din,y=@din,k=1,d=1]
+Pl/ov/nolab/nokey o_mpp[x=@din,y=@din,k=1,d=2]
+Pl/ov/nolab/nokey o_mpp[x=@din,y=@din,k=1,d=3]
+Pl/ov/nolab/nokey o_mpp[x=@din,y=@din,k=1,d=4]
+Pl/ov/nolab/nokey o_mpp[x=@din,y=@din,k=1,d=5]
+Pl/ov/nolab/nokey o_mpp[x=@din,y=@din,k=1,d=6]
+Pl/ov/nolab/nokey o_mpp[x=@din,y=@din,k=1,d=7]
+Pl/ov/nolab/nokey o_mpp[x=@din,y=@din,k=1,d=8]
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Faecal Pellets"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*-.22` 0,0,0.2 "Surface Microplastic Particles (m^-^3)"
+
+set view v3
+Plot/nolab/nokey/vlim=0:1E5:1E4 o_mpa[x=@din,y=@din,k=1,d=1]
+Pl/ov/nolab/nokey o_mpa[x=@din,y=@din,k=1,d=2]
+Pl/ov/nolab/nokey o_mpa[x=@din,y=@din,k=1,d=3]
+Pl/ov/nolab/nokey o_mpa[x=@din,y=@din,k=1,d=4]
+Pl/ov/nolab/nokey o_mpa[x=@din,y=@din,k=1,d=5]
+Pl/ov/nolab/nokey o_mpa[x=@din,y=@din,k=1,d=6]
+Pl/ov/nolab/nokey o_mpa[x=@din,y=@din,k=1,d=7]
+Pl/ov/nolab/nokey o_mpa[x=@din,y=@din,k=1,d=8]
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Marine Snow"
+
+set view v4
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mp[x=@din,y=@din,d=6]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Unattached"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+set view v5
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mpp[x=@din,y=@din,d=6]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Faecal Pellets"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*-.45` 0,0,0.2 "Microplastic Particles (m^-^3)"
+
+set view v6
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,8E3,4E2)(inf)/set o_mpa[x=@din,y=@din,d=6]
+ppl shakey 1 0 0.1 5 1 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Marine Snow Partition"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+FRAME/FILE=MmPP_Ret_149.png
