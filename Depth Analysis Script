@@ -1,0 +1,76 @@
+set mem/size=800
+canc mode cal
+
+def symbol opt1 = lev=(-inf)(0,10,0.1)(inf)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+set win 1
+
+go "/Volumes/Zhoon/Scripts/iportrait2x5.jnl"
+ppl labset, 0.0, 0.0, 0.15, 0.15
+ppl axlsze 0.15 0.15
+let totmmp=o_mpp+o_mp+o_mpa
+
+set view v1
+Sha/nolab/nokey/vlim=0:1500:250/lev=(-inf)(0,1E7,5E5)(inf) totmmp[x=@din,y=@din,d=4]
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "20@AS% AR"
+label/nouser `($ppl$xlen)*-.28` `($ppl$ylen)*.55` 0,90,0.15 "Depth (m^-^1)"
+
+set view v2
+Sha/nolab/nokey/vlim=0:1500:250/lev=(-inf)(0,1E7,5E5)(inf) totmmp[x=@din,y=@din,d=3]
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "100@AS% Reduction"
+label/nouser `($ppl$xlen)*-.28` `($ppl$ylen)*.55` 0,90,0.15 "Depth (m^-^1)"
+
+set view v3
+Sha/nolab/nokey/vlim=0:1500:250/lev=(-inf)(0,1E7,5E5)(inf) totmmp[x=@din,y=@din,d=5]
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "15@AS% AR"
+label/nouser `($ppl$xlen)*-.28` `($ppl$ylen)*.55` 0,90,0.15 "Depth (m^-^1)"
+
+set view v4
+Sha/nolab/nokey/vlim=0:1500:250/lev=(-inf)(0,1E7,5E5)(inf) totmmp[x=@din,y=@din,d=2]
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Constant Flux"
+label/nouser `($ppl$xlen)*-.28` `($ppl$ylen)*.55` 0,90,0.15 "Depth (m^-^1)"
+
+set view v5
+Sha/nolab/nokey/vlim=0:1500:250/lev=(-inf)(0,1E7,5E5)(inf) totmmp[x=@din,y=@din,d=6]
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "10@AS% AR"
+label/nouser `($ppl$xlen)*-.28` `($ppl$ylen)*.55` 0,90,0.15 "Depth (m^-^1)"
+
+set view v6
+Sha/nolab/vlim=0:1500:250/lev=(-inf)(0,1E7,5E5)(inf) totmmp[x=@din,y=@din,d=1]
+ppl shakey 1 0 0.15 4 2 2 `($ppl$xlen)*0.2` `($ppl$xlen)*1.5` `($ppl$ylen)*0.0` `($ppl$ylen)*0.3`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*-1.2` 0,0,0.2 "Microplastic Particles (m^-^1)"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "BAU Scenario"
+label/nouser `($ppl$xlen)*-.28` `($ppl$ylen)*.55` 0,90,0.15 "Depth (m^-^1)"
+
+set view v7
+Sha/nolab/nokey/vlim=0:1500:250/lev=(-inf)(0,1E7,5E5)(inf) totmmp[x=@din,y=@din,d=7]
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "5@AS% AR"
+label/nouser `($ppl$xlen)*-.28` `($ppl$ylen)*.55` 0,90,0.15 "Depth (m^-^1)"
+
+set view v8
+
+set view v9
+Sha/nolab/nokey/vlim=0:1500:250/lev=(-inf)(0,1E7,5E5)(inf) totmmp[x=@din,y=@din,d=8]
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "1@AS% AR"
+label/nouser `($ppl$xlen)*-.28` `($ppl$ylen)*.55` 0,90,0.15 "Depth (m^-^1)"
+
+FRAME/FILE=HV_MmP_74.png
