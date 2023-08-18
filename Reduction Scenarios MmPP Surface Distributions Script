@@ -1,0 +1,117 @@
+set mem/size=200
+canc mode cal
+
+def symbol opt1 = lev=(-inf)(0,10,0.1)(inf)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+go mp_grid o_mp
+GO mp_hammer
+GO mp_aspect
+go mp_grid o_temp
+go mp_grid g_mskt[d=1]
+
+set win 1
+
+go "/Volumes/Zhoon/Scripts/2isquare5x5.jnl"
+ppl labset, 0.0, 0.0, 0.15, 0.15
+ppl axlsze 0.15 0.15
+let totmmp=o_mp+o_mpp+o_mpa
+
+set view v1_1
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "totmmp[d=1,k=1,l=76]*1000*1000*mp_mask, x_page, y_page",v1_1,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.3 "2025"
+label/nouser `($ppl$xlen)*-.05` `($ppl$ylen)*.55` 0,90,0.2 "@AS 20% AR" 
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+
+set view v1_2
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "(totmmp[d=4,k=1,l=101]-totmmp[d=4,k=1,l=76])*1000*1000*mp_mask, x_page, y_page",v1_2,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.3 "2050"
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+
+set view v1_3
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "(totmmp[d=4,k=1,l=151]-totmmp[d=4,k=1,l=76])*1000*1000*mp_mask, x_page, y_page",v1_3,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.3 "2100"
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+
+set view v2_1
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "totmmp[d=1,k=1,l=76]*1000*1000*mp_mask, x_page, y_page",v2_1,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 ""
+label/nouser `($ppl$xlen)*-.05` `($ppl$ylen)*.55` 0,90,0.2 "@AS 15% AR"
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+!2025 unlabelled
+
+set view v2_2
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "(totmmp[d=5,k=1,l=101]-totmmp[d=5,k=1,l=76])*1000*1000*mp_mask, x_page, y_page",v2_2,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 ""
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+
+set view v2_3
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "(totmmp[d=5,k=1,l=151]-totmmp[d=5,k=1,l=76])*1000*1000*mp_mask, x_page, y_page",v2_3,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 ""
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+
+set view v3_1
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "totmmp[d=1,k=1,l=76]*1000*1000*mp_mask, x_page, y_page",v3_1,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 ""
+label/nouser `($ppl$xlen)*-.05` `($ppl$ylen)*.55` 0,90,0.2 "@AS 10% AR"
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+!2025 unlabelled
+
+set view v3_2
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "(totmmp[d=6,k=1,l=101]-totmmp[d=6,k=1,l=76])*1000*1000*mp_mask, x_page, y_page",v3_2,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 ""
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+
+set view v3_3
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "(totmmp[d=6,k=1,l=151]-totmmp[d=6,k=1,l=76])*1000*1000*mp_mask, x_page, y_page",v3_3,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 ""
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+
+set view v4_1
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "totmmp[d=1,k=1,l=76]*1000*1000*mp_mask, x_page, y_page",v4_1,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 ""
+label/nouser `($ppl$xlen)*-.05` `($ppl$ylen)*.55` 0,90,0.2 "@AS 5% AR"
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+!2025 unlabelled
+
+set view v4_2
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "(totmmp[d=7,k=1,l=101]-totmmp[d=7,k=1,l=76])*1000*1000*mp_mask, x_page, y_page",v4_2,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 ""
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+
+set view v4_3
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "(totmmp[d=7,k=1,l=151]-totmmp[d=7,k=1,l=76])*1000*1000*mp_mask, x_page, y_page",v4_3,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 ""
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+
+set view v5_1
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "totmmp[d=1,k=1,l=76]*1000*1000*mp_mask, x_page, y_page",v5_1,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 ""
+label/nouser `($ppl$xlen)*-.05` `($ppl$ylen)*.55` 0,90,0.2 "@AS 1% AR"
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+!2025 unlabelled
+
+set view v5_2
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "(totmmp[d=8,k=1,l=101]-totmmp[d=8,k=1,l=76])*1000*1000*mp_mask, x_page, y_page",v5_2,"fill/nolab/nokey/set/noaxis"
+ppl shakey 1 0 0.2 3 2 3 `($ppl$xlen)*-.2` `($ppl$xlen)*2.0` `($ppl$ylen)*0.4` `($ppl$ylen)*0.5`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 ""
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*-0.55` 0,0,0.2 "Microplastic Particles (km^-^2 per top metre of water)"
+
+set view v5_3
+go /Volumes/Zhoon/Scripts/log_key_nature 1E-2,1E2 "(totmmp[d=8,k=1,l=151]-totmmp[d=8,k=1,l=76])*1000*1000*mp_mask, x_page, y_page",v5_3,"fill/nolab/nokey/noaxis"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*0.5` 0,0,0.2 ""
+shade/ov/pal=black/lev=(-1,-1,1)/nolab/noaxis (g_mskt[d=1]-1)*mp_mask, x_page, y_page
+
+FRAME/FILE=SD_Scs_mp_D_67.png
