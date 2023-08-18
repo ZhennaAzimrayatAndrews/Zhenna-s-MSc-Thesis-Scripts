@@ -1,0 +1,53 @@
+set mem/size=800
+canc mode cal
+
+def symbol opt1 = lev=(-inf)(0,10,0.1)(inf)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+set win 1
+
+go "/Volumes/Zhoon/Scripts/ilandscape2x1.jnl"
+ppl labset, 0.0, 0.0, 0.15, 0.15
+ppl axlsze 0.15 0.15
+! convert nitrogen to carbon
+let ntc = 6.625
+! convert mol C to grams C
+let mtg = 12.011
+
+set view v1
+Pl/nolab/nokey o_detrexp[x=@din,y=@din,z=130,d=1]*ntc*mtg*80
+Pl/ov/nolab/nokey o_detrexp[x=@din,y=@din,z=130,d=2]*ntc*mtg*80
+Pl/ov/nolab/nokey o_detrexp[x=@din,y=@din,z=130,d=3]*ntc*mtg*80
+Pl/ov/nolab/nokey o_detrexp[x=@din,y=@din,z=130,d=4]*ntc*mtg*80
+Pl/ov/nolab/nokey o_detrexp[x=@din,y=@din,z=130,d=5]*ntc*mtg*80
+Pl/ov/nolab/nokey o_detrexp[x=@din,y=@din,z=130,d=6]*ntc*mtg*80
+Pl/ov/nolab/nokey o_detrexp[x=@din,y=@din,z=130,d=7]*ntc*mtg*80
+Pl/ov/nolab/nokey o_detrexp[x=@din,y=@din,z=130,d=8]*ntc*mtg*80
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.3 "Detrital Flux"
+label/nouser `($ppl$xlen)*-.3` `($ppl$ylen)*.55` 0,90,0.15 "Carbon (g m^-^2 s^-^1)"
+
+set view v2
+Pl/nolab/nokey o_dic[x=@din,y=@din,z=@din,d=1]*10^{-15}
+Pl/ov/nolab/nokey o_dic[x=@din,y=@din,z=@din,d=2]*10^{-15}
+Pl/ov/nolab/nokey o_dic[x=@din,y=@din,z=@din,d=3]*10^{-15}
+Pl/ov/nolab/nokey o_dic[x=@din,y=@din,z=@din,d=4]*10^{-15}
+Pl/ov/nolab/nokey o_dic[x=@din,y=@din,z=@din,d=5]*10^{-15}
+Pl/ov/nolab/nokey o_dic[x=@din,y=@din,z=@din,d=6]*10^{-15}
+Pl/ov/nolab/nokey o_dic[x=@din,y=@din,z=@din,d=7]*10^{-15}
+Pl/ov/nolab/nokey o_dic[x=@din,y=@din,z=@din,d=8]*10^{-15}
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.3 "Dissolved Inorganic Carbon"
+label/nouser `($ppl$xlen)*-.25` `($ppl$ylen)*.55` 0,90,0.15 "PMol Carbon"
+
+
+
+FRAME/FILE=DF_CO2F_31.png
