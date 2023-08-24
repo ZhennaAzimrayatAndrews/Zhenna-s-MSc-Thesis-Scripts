@@ -1,0 +1,349 @@
+!Scenario 1:
+
+set mem/size=400
+canc mode cal
+
+def symbol opt1 = lev=(-inf)(0,10,0.1)(inf)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+set win 1
+
+go "/Volumes/Zhoon/Scripts/isquare3x3_for_hammer_forRet.jnl"
+ppl labset, 0.0, 0.0, 0.15, 0.15
+ppl axlsze 0.15 0.15
+set window/size = 25
+
+set view v4
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mp[x=@din,y=@din,d=1]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Unattached"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+set view v5
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mpp[x=@din,y=@din,d=1]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Faecal Pellets"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*-.45` 0,0,0.2 "Microplastic Particles (m^-^3)"
+
+set view v6
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,8E3,4E2)(inf)/set o_mpa[x=@din,y=@din,d=1]
+ppl shakey 1 0 0.1 5 1 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Marine Snow Partition"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+FRAME/FILE=App_1.png
+
+!Scenario 2:
+
+set mem/size=400
+canc mode cal
+
+def symbol opt1 = lev=(-inf)(0,10,0.1)(inf)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+set win 1
+
+go "/Volumes/Zhoon/Scripts/isquare3x3_for_hammer_forRet.jnl"
+ppl labset, 0.0, 0.0, 0.15, 0.15
+ppl axlsze 0.15 0.15
+set window/size = 25
+
+set view v4
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mp[x=@din,y=@din,d=2]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Unattached"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+set view v5
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mpp[x=@din,y=@din,d=2]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Faecal Pellets"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*-.45` 0,0,0.2 "Microplastic Particles (m^-^3)"
+
+set view v6
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,8E3,4E2)(inf)/set o_mpa[x=@din,y=@din,d=2]
+ppl shakey 1 0 0.1 5 1 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Marine Snow Partition"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+FRAME/FILE=App_2.png
+
+!Scenario 3:
+
+set mem/size=400
+canc mode cal
+
+def symbol opt1 = lev=(-inf)(0,10,0.1)(inf)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+set win 1
+
+go "/Volumes/Zhoon/Scripts/isquare3x3_for_hammer_forRet.jnl"
+ppl labset, 0.0, 0.0, 0.15, 0.15
+ppl axlsze 0.15 0.15
+set window/size = 25
+
+set view v4
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mp[x=@din,y=@din,d=3]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Unattached"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+set view v5
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mpp[x=@din,y=@din,d=3]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Faecal Pellets"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*-.45` 0,0,0.2 "Microplastic Particles (m^-^3)"
+
+set view v6
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,8E3,4E2)(inf)/set o_mpa[x=@din,y=@din,d=3]
+ppl shakey 1 0 0.1 5 1 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Marine Snow Partition"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+FRAME/FILE=App_3.png
+
+!Scenario 4:
+
+set mem/size=400
+canc mode cal
+
+def symbol opt1 = lev=(-inf)(0,10,0.1)(inf)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+set win 1
+
+go "/Volumes/Zhoon/Scripts/isquare3x3_for_hammer_forRet.jnl"
+ppl labset, 0.0, 0.0, 0.15, 0.15
+ppl axlsze 0.15 0.15
+set window/size = 25
+
+set view v4
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mp[x=@din,y=@din,d=4]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Unattached"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+set view v5
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mpp[x=@din,y=@din,d=4]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Faecal Pellets"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*-.45` 0,0,0.2 "Microplastic Particles (m^-^3)"
+
+set view v6
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,8E3,4E2)(inf)/set o_mpa[x=@din,y=@din,d=4]
+ppl shakey 1 0 0.1 5 1 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Marine Snow Partition"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+FRAME/FILE=App_4.png
+
+!Scenario 5:
+
+set mem/size=400
+canc mode cal
+
+def symbol opt1 = lev=(-inf)(0,10,0.1)(inf)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+set win 1
+
+go "/Volumes/Zhoon/Scripts/isquare3x3_for_hammer_forRet.jnl"
+ppl labset, 0.0, 0.0, 0.15, 0.15
+ppl axlsze 0.15 0.15
+set window/size = 25
+
+set view v4
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mp[x=@din,y=@din,d=5]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Unattached"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+set view v5
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mpp[x=@din,y=@din,d=5]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Faecal Pellets"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*-.45` 0,0,0.2 "Microplastic Particles (m^-^3)"
+
+set view v6
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,8E3,4E2)(inf)/set o_mpa[x=@din,y=@din,d=5]
+ppl shakey 1 0 0.1 5 1 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Marine Snow Partition"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+FRAME/FILE=App_5.png
+
+!Scenario 7:
+
+set mem/size=400
+canc mode cal
+
+def symbol opt1 = lev=(-inf)(0,10,0.1)(inf)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+set win 1
+
+go "/Volumes/Zhoon/Scripts/isquare3x3_for_hammer_forRet.jnl"
+ppl labset, 0.0, 0.0, 0.15, 0.15
+ppl axlsze 0.15 0.15
+set window/size = 25
+
+set view v4
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mp[x=@din,y=@din,d=7]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Unattached"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+set view v5
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mpp[x=@din,y=@din,d=7]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Faecal Pellets"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*-.45` 0,0,0.2 "Microplastic Particles (m^-^3)"
+
+set view v6
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,8E3,4E2)(inf)/set o_mpa[x=@din,y=@din,d=7]
+ppl shakey 1 0 0.1 5 1 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Marine Snow Partition"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+FRAME/FILE=App_7.png
+
+Scenario 8:
+
+set mem/size=400
+canc mode cal
+
+def symbol opt1 = lev=(-inf)(0,10,0.1)(inf)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+set win 1
+
+go "/Volumes/Zhoon/Scripts/isquare3x3_for_hammer_forRet.jnl"
+ppl labset, 0.0, 0.0, 0.15, 0.15
+ppl axlsze 0.15 0.15
+set window/size = 25
+
+set view v4
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mp[x=@din,y=@din,d=8]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Unattached"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+set view v5
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,5E6,2E5)(inf)/set o_mpp[x=@din,y=@din,d=8]
+ppl shakey 1 0 0.1 6 2 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Faecal Pellets"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*-.45` 0,0,0.2 "Microplastic Particles (m^-^3)"
+
+set view v6
+Sha/nolab/vlim=0:1500:150/lev=(-inf)(0,8E3,4E2)(inf)/set o_mpa[x=@din,y=@din,d=8]
+ppl shakey 1 0 0.1 5 1 2 `($ppl$xlen)*0.4` `($ppl$xlen)*1.25` `($ppl$ylen)*.15` `($ppl$ylen)*.25`
+ppl fill
+label/nouser `($ppl$xlen)*.5` `($ppl$ylen)*1.1` 0,0,0.2 "Marine Snow Partition"
+label/nouser `($ppl$xlen)*-.2` `($ppl$ylen)*.5` 0,90,0.15 "Depth (m^-^1)"
+
+FRAME/FILE=App_8.png
