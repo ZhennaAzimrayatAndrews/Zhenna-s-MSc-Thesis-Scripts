@@ -1,0 +1,21 @@
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+let totmp=o_mp+o_mpp+o_mpa
+
+set win 1 !You're now workign in Window 1
+
+list totmp[x=@din,y=@din,k=1,d=1]
+list totmp[x=@din,y=@din,k=1,d=2]
+list totmp[x=@din,y=@din,k=1,d=3]
+list totmp[x=@din,y=@din,k=1,d=4]
+list totmp[x=@din,y=@din,k=1,d=5]
+list totmp[x=@din,y=@din,k=1,d=6]
+list totmp[x=@din,y=@din,k=1,d=7]
+list totmp[x=@din,y=@din,k=1,d=8]
