@@ -1,0 +1,20 @@
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_1/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_2/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_3/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_4/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_5/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_6/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_7/tavg.01951.01.01.nc
+use /Volumes/Zhoon/Thesis_Data/Tavg/Test_8/tavg.01951.01.01.nc
+
+
+set win 1 !You're now workign in Window 1
+
+list f_mp[x=@din,y=@din,d=1]
+list f_mp[x=@din,y=@din,d=2]
+list f_mp[x=@din,y=@din,d=3]
+list f_mp[x=@din,y=@din,d=4]
+list f_mp[x=@din,y=@din,d=5]
+list f_mp[x=@din,y=@din,d=6]
+list f_mp[x=@din,y=@din,d=7]
+list f_mp[x=@din,y=@din,d=8]
